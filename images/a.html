@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<!-- <script src="https://www.google.com/recaptcha/api.js?render=6Lc-Pp4UAAAAAPKKPg6LfZpyYea9_ku98ShLay3_"></script> -->
+
+</head>
+<body>
+
+<form method="post" action="actiona.cfm">
+<input name="name" type="text" class="form-control" placeholder="Name" required>
+<input name="email" type="email" class="form-control" placeholder="Email" required>
+<input name="file" type="file" multiple id="s">
+  
+<input type="submit">
+</form>
+<script>
+var p = document.getElementById("s");
+
+
+$('form').submit(function() {
+	var p = document.getElementById("s");
+	console.log(p);
+	
+	
+});
+/*$('form').submit(function() { 
+	
+	 // we stoped it
+    event.preventDefault();
+	 
+    // needs for recaptacha ready
+    grecaptcha.ready(function() {
+        // do request for recaptcha token
+        // response is promise with passed token
+        grecaptcha.execute('6Lc-Pp4UAAAAAPKKPg6LfZpyYea9_ku98ShLay3_', {action: 'create_comment'}).then(function(token) {
+            // add token to form
+             console.log(token);
+            $('form').prepend('<input type="hidden" name="token" value="' + token + '">');
+            $('form').prepend('<input type="hidden" name="action" value="create_comment">');
+            // submit form now
+            $('form').unbind('submit').submit();
+        });;
+    });
+	
+});*/
+ 
+  </script>
+</body>
+</html>
